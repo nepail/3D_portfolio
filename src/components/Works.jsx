@@ -16,21 +16,20 @@ const ProjectCard = ({
 }) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
-      <Tilt
-        className="w-full bg-tertiary p-5 rounded-2xl sm:w-[360px]"
-      >
+      <Tilt className="w-full bg-tertiary p-5 rounded-2xl sm:w-[360px]">
         <div className="relative w-full h-[230px]">
-          <img 
+          <img
             src={image}
             alt={name}
             className="w-full h-full object-cover rounded-2xl"
           />
 
           <div className="absolute inset-0 flex justify-end m-3 card-img_hover">
-            <div 
-              onClick={()=>window.open(source_code_link, "_blank")}
-              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer">
-              <img 
+            <div
+              onClick={() => window.open(source_code_link, "_blank")}
+              className="black-gradient w-10 h-10 rounded-full flex justify-center items-center cursor-pointer"
+            >
+              <img
                 src={github}
                 alt="github"
                 className="w-1/2 h-1/2 object-contain"
@@ -45,12 +44,11 @@ const ProjectCard = ({
         </div>
 
         <div className="mt-4 flex flex-wrap gap-2">
-          {tags.map((tag)=>(
+          {tags.map((tag) => (
             <p key={tag.name} className={`text-[14px] ${tag.color}`}>
               #{tag.name}
             </p>
           ))}
-
         </div>
       </Tilt>
     </motion.div>
